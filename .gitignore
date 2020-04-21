@@ -1,3 +1,4 @@
+.gitignore
 djangofirebase
 templates
 db.sqlite3
