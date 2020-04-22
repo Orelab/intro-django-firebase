@@ -15,7 +15,7 @@ Créer une base de données Firebase :
 - Développer > Database
 
 
-# installer Django
+# Installer Django
 
 ```
 sudo pip3 install Pyrebase
