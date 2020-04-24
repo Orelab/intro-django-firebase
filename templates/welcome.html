@@ -1,0 +1,43 @@
+{% if msg %}
+<script>
+    alert('{{msg}}')
+</script>
+{% endif %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        html { padding: 0 50px; }
+        header { margin: 0 0 40px; }
+        form {padding: 50px; border: 1px grey solid; border-radius:5px;}
+    </style>
+</head>
+
+<body>
+    <header>
+        {% csrf_token %}
+        <h1>Welcome {{e}}</h1>
+    </header>
+
+
+    <form action="/postmessage/" method="post">
+        {% csrf_token %}
+        <label for="message">Message :</label>
+        <input type="text" name="message" value="" placeholder="Your message here"/>
+        <input type="submit" value="save"/>
+    </form>
+
+    {% if m %}
+    <table>
+        {% for key, message in m.items %}
+            <tr>
+                <td class="{{key}}">{{message}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    
+</body>
+</html>
